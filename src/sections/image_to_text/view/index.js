@@ -1,0 +1,1 @@
+export { default as ImageTextView } from './imageText-view';

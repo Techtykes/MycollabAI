@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { UserView ,AddBotView  } from 'src/sections/user/view';
+import { AddBotView  } from 'src/sections/user/view';
 
 // ----------------------------------------------------------------------
 
-export default function UserPage() {
+export default function AddBotPage() {
   return (
     <>
       <Helmet>
-        <title> Bot | Minimal UI </title>
+        <title> Add Bot | Minimal UI </title>
       </Helmet>
-<AddBotView/>
-      <UserView />
+
+      <AddBotView />
     </>
   );
 }

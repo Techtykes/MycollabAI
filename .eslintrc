@@ -7,8 +7,10 @@
   "plugins": [
     "perfectionist",
     "unused-imports",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
+  
   "extends": [
     "airbnb",
     "airbnb/hooks",
@@ -42,6 +44,11 @@
     }
   },
   "rules": {
+        "jsx-a11y/label-has-associated-control": [ 2, {
+      "required": {
+        "some": [ "nesting", "id" ]
+      }
+    }],
     "no-alert": 0,
     "camelcase": 0,
     "no-console": 0,
@@ -63,6 +70,8 @@
     "import/prefer-default-export": 0,
     "react/function-component-definition": 0,
     "jsx-a11y/control-has-associated-label": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/jsx-no-useless-fragment": [
       1,
       {

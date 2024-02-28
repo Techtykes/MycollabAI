@@ -6,6 +6,9 @@ import checker from 'vite-plugin-checker';
 // ----------------------------------------------------------------------
 
 export default defineConfig({
+   build: {
+    target: 'es2019'
+  },
   plugins: [
     react(),
     checker({

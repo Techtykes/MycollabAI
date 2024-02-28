@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { UserView ,AddBotView  } from 'src/sections/user/view';
+import { SharePage  } from 'src/sections/chat/view/SharePage';
 
 // ----------------------------------------------------------------------
 
-export default function UserPage() {
+export default function SharePages() {
   return (
     <>
       <Helmet>
-        <title> Bot | Minimal UI </title>
+        <title> SharePage Bot | Minimal UI </title>
       </Helmet>
-<AddBotView/>
-      <UserView />
+
+      <SharePage />
     </>
   );
 }

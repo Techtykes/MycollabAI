@@ -13,8 +13,8 @@ const navConfig = [
     icon: icon('ic_analytics'),
   },
   {
-    title: 'user',
-    path: '/user',
+    title: 'User',
+    path: '/Bot',
     icon: icon('ic_user'),
   },
   {
@@ -36,6 +36,24 @@ const navConfig = [
     title: 'Not found',
     path: '/404',
     icon: icon('ic_disabled'),
+  },
+  // new
+    {
+    title: 'Bot',
+    path: '/chat',
+    icon: icon('chat_bot'),
+  },
+
+   // new
+    {
+    title: 'image To Text',
+    path: '/image_to_text',
+    icon: icon('imageText'),
+  },
+     {
+    title: 'add bot',
+    path: '/add_bot',
+    icon: icon('imageText'),
   },
 ];
 
