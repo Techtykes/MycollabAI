@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-import { AddBotView  } from 'src/sections/user/view';
+import { AddBotView  } from 'src/sections/chat/view';
 
 // ----------------------------------------------------------------------
 

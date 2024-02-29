@@ -7,7 +7,6 @@ import { Button, Select, MenuItem, Container, TextField, Typography, InputLabel,
 export default function AddBotView() {
   const [botName, setBotName] = useState('');
   const [botDescription, setBotDescription] = useState('');
-  const [botModel, setBotModel] = useState('Mistral AI');
   
    const [botPersonality, setBotPersonality] = useState('');
      const [showSuccessAlert, setShowSuccessAlert] = useState(false); // State for showing the alert
@@ -20,7 +19,7 @@ export default function AddBotView() {
   const botData = {
     name: botName,
     description: botDescription,
-    model: botModel,
+     model: 'Mistral AI', // Always set model to 'Mistral AI'
     personality: botPersonality,
   };
 
@@ -81,20 +80,7 @@ const handleAlertClose = () => {
           value={botDescription}
           onChange={(e) => setBotDescription(e.target.value)}
         />
-         <TextField
-          id="bot-model"
-          label="Bot Model"
-          select
-          SelectProps={{
-            native: true,
-          }}
-          fullWidth
-          margin="normal"
-          value={botModel}
-          onChange={(e) => setBotModel(e.target.value)}
-        >
-          <option value="Mistral AI">Mistral AI</option>
-        </TextField>
+       
       <FormControl fullWidth margin="normal">
         <InputLabel id="bot-personality-label">Bot Personality</InputLabel>
         <Select
