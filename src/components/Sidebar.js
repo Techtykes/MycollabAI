@@ -1,9 +1,9 @@
-// Sidebar.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Sidebar = ({ onNewFolderClick, onFolderClick }) => {
     const [folders, setFolders] = useState([]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     useEffect(() => {
         // Fetch folder data from backend API
@@ -22,8 +22,15 @@ const Sidebar = ({ onNewFolderClick, onFolderClick }) => {
         console.log('Folder clicked:', folderId, folderName);
     };
 
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+            <button className="toggle-button" onClick={toggleSidebar}>
+                <i className={`fas fa-chevron-${isSidebarOpen ? 'left' : 'right'}`}></i>
+            </button>
             <button className="new-folder-button" onClick={onNewFolderClick}>New Folder</button>
             <input type="text" className="search-bar" placeholder="Search..." />
             <div className="divider"></div>

@@ -8,9 +8,6 @@ const Dashboard = ({ folderId, folderName }) => {
     const [content, setContent] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [storedDocuments, setStoredDocuments] = useState([]);
-    const [selectedPDF, setSelectedPDF] = useState(null);
-    const [uploadErrorMessage, setUploadErrorMessage] = useState('');
-
     
 
     useEffect(() => {
@@ -69,15 +66,6 @@ const Dashboard = ({ folderId, folderName }) => {
         document.getElementById('pdf-input').click();
     };
 
-    const handlePDFSelection = (event) => {
-        const file = event.target.files[0];
-        if (file.type !== 'application/pdf') {
-            setUploadErrorMessage('Please select a PDF file.');
-            return;
-        }
-        setSelectedPDF(file);
-        setUploadErrorMessage('');
-    };
 
     return (
         <div className="dashboard">
@@ -90,7 +78,7 @@ const Dashboard = ({ folderId, folderName }) => {
                     <div className="button-container">
                         <button className="big-button" onClick={handleWriteClick}>Write: Write or paste your document</button>
                         <button className="big-button" onClick={handleUploadClick}>Upload: Upload your PDF documents</button>
-                        <input type="file" id="pdf-input" accept=".pdf" style={{ display: 'none' }} onChange={handlePDFSelection} />
+                        <input type="file" id="pdf-input" accept=".pdf" style={{ display: 'none' }} />
                     </div>
                 </div>
             ) : (

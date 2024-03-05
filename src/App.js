@@ -30,8 +30,11 @@ const App = () => {
         <div className="app">
             <Sidebar onNewFolderClick={handleNewFolderClick} onFolderClick={handleFolderClick} />
             {showModal && <Modal onClose={handleCloseModal} />}
-            {selectedFolder && <FolderDashboard folderId={selectedFolderId} folderName={selectedFolder} key={refreshDashboard} />}
-
+            {selectedFolder ? (
+                <FolderDashboard folderId={selectedFolderId} folderName={selectedFolder} key={refreshDashboard} />
+            ) : (
+                <div className="select-folder-label">⬅️ Select a folder</div>
+            )}
         </div>
     );
 };
